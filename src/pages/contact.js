@@ -143,17 +143,10 @@ const GhForm = styled.form`
 
 export default () => (
   <Fragment>
-
-  <h1>
-  Contact us!
-</h1>
-  <ul>
-  <li>by email: turtle@turtlequeue.com</li>
-  <li>by chat: click on the </li>
-  </ul>
-
-
-
-
+    <h1>Contact us!</h1>
+    <ul>
+      <li>by email: turtle@turtlequeue.com</li>
+      <li>by chat: click on the </li>
+    </ul>
   </Fragment>
 );

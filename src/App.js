@@ -160,8 +160,14 @@ function App() {
           in London
         </div>
       </Footer>
-      <script type="text/javascript" dangerouslySetInnerHTML={{__html: AnalyticsJsSnippet}}></script>
-      <script type="text/javascript" dangerouslySetInnerHTML={{__html: CrispSnippet}}></script>
+      <script
+        type="text/javascript"
+        dangerouslySetInnerHTML={{ __html: AnalyticsJsSnippet }}
+      />
+      <script
+        type="text/javascript"
+        dangerouslySetInnerHTML={{ __html: CrispSnippet }}
+      />
     </Root>
   );
 }
