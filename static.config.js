@@ -26,6 +26,9 @@ export default {
         <meta property="og:url"  content="https://turtlequeue.com" />
         <meta property="og:title"  content="TurtleQueue" />
         <title>TurtleQueue</title>
+        <link rel="preconnect" href="https://script.hotjar.com"/>
+        <link rel="preconnect" href="https://vars.hotjar.com"/>
+        <link rel="preconnect" href="https://www.google-analytics.com"/>
       </Head>
       <Body>{children}</Body>
     </Html>
