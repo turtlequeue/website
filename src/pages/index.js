@@ -7,6 +7,13 @@ import { theme } from "../lib/color";
 import { media } from "../lib/style";
 import CodeSnippet from "../lib/snippet";
 
+// import imgDevopsFriendly from "../img/devops.png";
+// import imgDashboard from "../img/dashboard.png";
+// import imgProductionReady from "../img/done.png";
+// import imgDeveloperFriendly from "../img/developer.png";
+// import imgTimeSaver from "../img/undraw_timeline_9u4u.png";
+// import imgPowerfulFunctions from "../img/undraw_to_the_moon_v1mv.png";
+
 //
 // see font of https://elements.envato.com/single on-ui-pack-EFCPEQ
 //
@@ -81,6 +88,11 @@ line-height:1.7em; `}
     font-weight: 500;
   }
 
+  .heroDescription {
+    max-width: 80%;
+    font-weight: 600;
+  }
+
   ul {
     list-style: none;
   }
@@ -141,51 +153,80 @@ const GhForm = styled.form`
   }
 `;
 
+const Cards = styled.div`
+${props => props.className} {
+   justify-content: space-between;
+   flex-wrap: wrap;
+  }
+`
+
+const Card = styled.div`
+${props => props.className} {
+    width: 200px;
+    display: inline-block;
+    margin: 20px;
+  }
+
+div {
+ font-weight: 600;
+}
+`
+
 export default () => (
   <Fragment>
     <Home>
       <BackgroundImage>
         <h1 className="valueProp">Cross platform messaging</h1>
         <h2 className="catchy">Messaging for the modern web</h2>
+        <p className="heroDescription"> TurtleQueue is Message Queue Broker for all: web, mobile, servers, micro-services, IoT... can now talk the same language. Serverless, with built-in persistence and advanced querying and filtering.</p>
         <GhForm action="/security/oauth2/initiate-github" method="POST">
           <button type="submit">
             <i className="githubIcon" />
             Log in with Github
           </button>
         </GhForm>
-        {/* the below could link to a specific section of the doc
-            the doc links to the playground/JSFiddle etc. */}
-        <ul className="chevrons">
-          <li>
-            <a href="https://turtlequeue.com/doc/latest/how_turtlequeue_can_help.html">
-              Distributed Pub/Sub - connect your services and apps together
-            </a>
-          </li>
-          <li>
-            <a href="https://turtlequeue.com/doc/latest/how_turtlequeue_can_help.html">
-              Poweful built-in geolicalized filters
-            </a>
-          </li>
-          <li>
-            <a href="https://turtlequeue.com/doc/latest/how_turtlequeue_can_help.html">
-              Unlimited retention messaging, replay messages
-            </a>
-          </li>
-          <li>
-            <a href="https://turtlequeue.com/doc/latest/how_turtlequeue_can_help.html">
-              Built-in SQL analytics
-            </a>
-          </li>
-          <li>
-            <a href="https://turtlequeue.com/doc/latest/how_turtlequeue_can_help.html">
-              Geo-filtering, JsonPath filtering, delayed messages, shared or
-              exclusive queues and more.
-            </a>
-          </li>
-        </ul>
 
-        <CodeSnippet />
+        {/* <CodeSnippet /> */}
+        <Cards>
+          <Card>
+            {/* <img src={imgDevopsFriendly} alt="Devops friendly"/> */}
+            <div>Devops friendly</div>
+            <p>Choose from hosted or any cloud - private or public without external dependencies. We run on kubernetes.</p>
+          </Card>
 
+          <Card>
+            {/* <img src={imgProductionReady} alt="Production ready"/> */}
+            <div>Production ready</div>
+            <p>Distributed, with no single point of failure. Acknowledgements, automatic reconnection, authentication and fine-grained authorization. Built-in persistence and introspection via tracing and SQL analytics.</p>
+          </Card>
+
+          <Card>
+            {/* <img src={imgDeveloperFriendly} alt="Developer friendly"/> */}
+            <div>Developer friendly</div>
+            <p>What you send is what you get. Automatic channel creation. Publish-subscribe or response-request. You won't have to learn about exchanges, routes, dead-letter queues, rebalancing, sharding (unless you want to).</p>
+          </Card>
+
+          <br/>
+
+          <Card>
+            {/* <img src={imgTimeSaver} alt="Time saver"/> */}
+            <div>Time saver</div>
+            <p>Ready for production or rapid prototyping. Send your first messages in under a minute.</p>
+          </Card>
+
+          <Card>
+            {/* <img src={imgPowerfulFunctions} alt="Powerful functions"/> */}
+            <div>Powerful functions</div>
+            <p>Delayed messages. Channels regex selection (not just wildcard). Built-in prioritization. Advanced filter like geolocalization and JsonPath.</p>
+          </Card>
+
+
+          <Card>
+            {/* <img src={imgDashboard} alt="Dashboard"/> */}
+            <div>Dashboard</div>
+            <p>Dashboard for monitoring, statistics, and one-off operations.</p>
+          </Card>
+</Cards>
         <figcaption>
           <a href="https://goo.gl/a1njLp">Image CC BY 2.0 </a>
         </figcaption>

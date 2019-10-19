@@ -99,34 +99,22 @@ const StyleTabs = styled.span`
 
 const CodeSnippet = () => {
   const JsPublishSnippet = `
-turtlequeue.publish({channel:'#news',
-                     geo: {lat: 48.8049,
-                           lon: 2.1204},
-                     payload: {msg:\'hello\', d: new Date()}})
+turtlequeue.publish({channel:'#news', payload: {msg:\'hello\', d: new Date()}})
     .then((data) => console.log(\'published to:\', data))`;
 
   const JsSubscribeSnippet = `
-turtlequeue.subscribe({channel:'#news',
-                       geo: {lat: 48.8566,
-                             lon: 2.3522,
-                             radius: '50km'}
-}, (err, data) => {
+turtlequeue.subscribe({channel:'#news'}, (err, data) => {
   console.log('received message', msg);
 })`;
 
   const CljSubscribeSnippet = `
-(turtlequeue/subscribe driver {:channel "#test"
-                               :location {:lat 48.8566
-                                          :lon 2.3522
-                                          :radius "50km"}}
+(turtlequeue/subscribe driver {:channel "#news"}
                        (fn [err data metadata]
                          (println "data received" data)))
 `;
 
   const CljPublishSnippet = `
-(turtlequeue/publish driver {:channel "#test"
-                             :location {:lat 48.8049
-                                        :lon 2.1204}
+(turtlequeue/publish driver {:channel "#news"
                              :payload {:msg "hello" :d (Date.)}}
                      (fn [err data metadata]
                        (println "publish " data)))`;

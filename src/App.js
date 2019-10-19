@@ -31,11 +31,11 @@ const GlobalStyle = createGlobalStyle`
     scroll-behavior: smooth;
   }
 
-html, body{
+html, body {
   width: 100%;
   height: 100%;
   font-family:InterUI,-apple-system,BlinkMacSystemFont,Helvetica Neue,Segoe UI,Oxygen,Ubuntu,Cantarell,Open Sans,sans-serif;
-  font-weight: 700;
+  font-weight: 400;
   text-transform: none;
   background-color: ${theme.darkShade};
 }
@@ -127,14 +127,10 @@ function App() {
             alt="Happy turtle, all the way"
           />
         </Link>
-        {/* <Link to="/pricing">
-           pricing
-           </Link> */}
-        {/* <Link to="https://github.com/turtlequeue">
-           Github
-           </Link> */}
         <a href="/doc/latest/overview.html">documentation</a>
         <a href="https://github.com/turtlequeue/">Github</a>
+        <Link to="/pricing"> pricing </Link>
+        <Link to="/contact"> contact </Link>
       </Nav>
 
       <Main>
@@ -149,7 +145,7 @@ function App() {
       <Footer>
         <div className="love">
           <a href="https://www.startupschool.org/companies/yccertificateturtlequeue">
-            YC SS 2018
+            YC SS 2019
           </a>
         </div>
         <div className="love">
