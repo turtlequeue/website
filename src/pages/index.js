@@ -123,6 +123,7 @@ const GhForm = styled.form`
     align-items: center;
     text-align: right;
     font-size: 24px;
+    font-weight: 700;
   }
   .githubIcon {
     width: 50px;
@@ -186,7 +187,8 @@ export default () => (
           </button>
         </GhForm>
 
-        {/* <CodeSnippet /> */}
+        <CodeSnippet />
+
         <Cards>
           <Card>
             {/* <img src={imgDevopsFriendly} alt="Devops friendly"/> */}
