@@ -4,8 +4,7 @@ import "../styles/main.scss"
 
 import {Link} from "../components/Router";
 
-import HomeTurtle from "../img/home-img.png"
-
+import HomeTurtle from "../assets/home-img.svg"
 import FeatureFirst from "../assets/features-1.svg"
 import FeatureSecond from "../assets/features-2.svg"
 import FeatureThird from "../assets/features-3.svg"

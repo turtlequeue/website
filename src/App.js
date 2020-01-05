@@ -8,7 +8,6 @@ import {Link, Router} from "components/Router";
 
 import styled, {createGlobalStyle} from "styled-components";
 
-import logoImgWhite from "./img/turtle_world_white.png";
 import {theme} from "./lib/color.js";
 import {AnalyticsJsSnippet} from "./lib/analytics.js";
 import {CrispSnippet} from "./lib/crisp.js";
@@ -64,7 +63,7 @@ const Main = styled.main`
   ${props => props.className} {
     color: #444;
     /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#e1ffff+0,e1ffff+7,e1ffff+12,fdffff+12,e6f8fd+30,c8eefb+54,bee4f8+75,b1d8f5+100;Blue+Pipe+%232 */
-    background-color: #dae1e7;
+    // background-color: #dae1e7;
     min-height: calc(100vh - 135px);
   }
 `;
