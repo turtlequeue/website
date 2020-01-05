@@ -12,7 +12,7 @@ const Title = styled.h1`
 `;
 
 export default () => (
-  <div>
-    <Title>404 - Oh no's! We couldn't find that page :(</Title>
-  </div>
+    <div>
+        <Title>404 - Oh no's! We couldn't find that page :(</Title>
+    </div>
 );

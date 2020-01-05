@@ -1,17 +1,17 @@
 ﻿//-*- coding: utf-8-with-signature-unix -*-
 
 import React from "react";
-import { Root, Routes, addPrefetchExcludes } from "react-static";
+import {Root, Routes, addPrefetchExcludes} from "react-static";
 //
-import { Link, Router } from "components/Router";
+import {Link, Router} from "components/Router";
 // import Dynamic from "containers/Dynamic";
 
-import styled, { createGlobalStyle } from "styled-components";
+import styled, {createGlobalStyle} from "styled-components";
 
 import logoImgWhite from "./img/turtle_world_white.png";
-import { theme } from "./lib/color.js";
-import { AnalyticsJsSnippet } from "./lib/analytics.js";
-import { CrispSnippet } from "./lib/crisp.js";
+import {theme} from "./lib/color.js";
+import {AnalyticsJsSnippet} from "./lib/analytics.js";
+import {CrispSnippet} from "./lib/crisp.js";
 
 import "normalize.css";
 
@@ -26,6 +26,12 @@ addPrefetchExcludes(["dynamic"]);
 // use system font
 // https://css-tricks.com/snippets/css/system-font-stack
 //
+
+import Header from "./components/Header"
+import Footer from "./components/Footer"
+
+import "./styles/main.scss"
+
 const GlobalStyle = createGlobalStyle`
 * {
     scroll-behavior: smooth;
@@ -37,7 +43,7 @@ html, body {
   font-family:InterUI,-apple-system,BlinkMacSystemFont,Helvetica Neue,Segoe UI,Oxygen,Ubuntu,Cantarell,Open Sans,sans-serif;
   font-weight: 400;
   text-transform: none;
-  background-color: ${theme.darkShade};
+  background-color: ${theme.light};
 }
 #root {
   width:100%;
@@ -48,62 +54,11 @@ html, body {
   grid-template-columns: 100%;
 }`;
 
-const Footer = styled.footer`
-  ${props => props.className} {
-    padding: 1rem;
-    background: ${theme.darkShade};
-  }
-  .love {
-    text-align: left;
-    color: rgba(255, 255, 255, 0.9);
-  }
-
-  // to avoid the crisp chat being over the footer
-  @media only screen and (min-height: 560px) {
-    ${props => props.className} {
-      min-height: 42px;
-    }
-  }
-`;
-
 //
 // TODO  see https://blog.christopherianmurphy.com/2016/01/responsive-pure-css-menu/
 // (seems like it uses a checkbox trick to be pure CSS)
 // or maybe https://react-bootstrap.github.io/components/navbar/#brand
 //
-
-const Nav = styled.nav`
-  ${props => props.className} {
-    background-color: ${theme.darkShade};
-    color: white;
-    padding: 1rem;
-    flex: 1;
-  }
-
-  a {
-    text-decoration: none;
-    color: rgba(255, 255, 255, 0.7);
-    font-weight: bold;
-    padding: 10px;
-  }
-
-  .logo {
-    padding-right: 10px;
-  }
-
-  a:hover,
-  .active {
-    color: #fff;
-  }
-
-  .active {
-    border-bottom: 2px solid white;
-  }
-
-  .mainLink {
-    margin-right: 22px;
-  }
-`;
 
 const Main = styled.main`
   ${props => props.className} {
@@ -115,63 +70,38 @@ const Main = styled.main`
 `;
 
 function App() {
-  return (
-    <Root>
-      <GlobalStyle />
-      <Nav>
-        <Link className="mainLink" exact="true" to="/">
-          <img
-            className="logo"
-            height="10"
-            src={logoImgWhite}
-            alt="Happy turtle, all the way"
-          />
-        </Link>
-        <a href="/doc/latest/overview.html">documentation</a>
-        <a href="https://github.com/turtlequeue/">Github</a>
-        <Link to="/pricing"> pricing </Link>
-        <Link to="/contact"> contact </Link>
-      </Nav>
+    return (
+        <Root>
+            <GlobalStyle/>
 
-      <Main>
-        <React.Suspense fallback={<em>Loading...</em>}>
-          <Router>
-            {/* <Dynamic path="dynamic" /> */}
-            <Routes path="*" />
-          </Router>
-        </React.Suspense>
-      </Main>
+            <Header/>
 
-      <Footer>
-        <div className="love">
-          <a href="https://www.startupschool.org/companies/yccertificateturtlequeue">
-            YC SS 2019
-          </a>
-        </div>
-        <div className="love">
-          made by turtles for turtles with
-          <span role="img" aria-label="Wine">
-            &#127863;
-          </span>
-          in London
-        </div>
-      </Footer>
-      <script
-        type="text/javascript"
-        dangerouslySetInnerHTML={{ __html: AnalyticsJsSnippet }}
-      />
-      <script
-        type="text/javascript"
-        dangerouslySetInnerHTML={{ __html: CrispSnippet }}
-      />
-    </Root>
-  );
+            <Main>
+                <React.Suspense fallback={<em>Loading...</em>}>
+                    <Router>
+                        {/* <Dynamic path="dynamic" /> */}
+                        <Routes path="*"/>
+                    </Router>
+                </React.Suspense>
+            </Main>
+
+            <Footer/>
+            <script
+                type="text/javascript"
+                dangerouslySetInnerHTML={{__html: AnalyticsJsSnippet}}
+            />
+            <script
+                type="text/javascript"
+                dangerouslySetInnerHTML={{__html: CrispSnippet}}
+            />
+        </Root>
+    );
 }
 
 if (typeof document !== "undefined") {
-  const hotjar = require("react-hotjar").hotjar;
-  const hotJarConfig = { hjid: 1431493, hjsv: 6 };
-  hotjar.initialize(hotJarConfig.hjid, hotJarConfig.hjsv);
+    const hotjar = require("react-hotjar").hotjar;
+    const hotJarConfig = {hjid: 1431493, hjsv: 6};
+    hotjar.initialize(hotJarConfig.hjid, hotJarConfig.hjsv);
 }
 
 export default App;
