@@ -1,238 +1,202 @@
-import React, { Fragment } from "react";
-import styled from "styled-components";
-import worldPaint from "../img/world_paint_1280_40.jpg";
-import worldPaint2 from "../img/world_paint_min.jpg";
-import GithubLogo from "../img/github_logo.png";
-import { theme } from "../lib/color";
-import { media } from "../lib/style";
-import CodeSnippet from "../lib/snippet";
+import React, {Fragment, useState} from 'react';
 
-// import imgDevopsFriendly from "../img/devops.png";
-// import imgDashboard from "../img/dashboard.png";
-// import imgProductionReady from "../img/done.png";
-// import imgDeveloperFriendly from "../img/developer.png";
-// import imgTimeSaver from "../img/undraw_timeline_9u4u.png";
-// import imgPowerfulFunctions from "../img/undraw_to_the_moon_v1mv.png";
+import "../styles/main.scss"
 
-//
-// see font of https://elements.envato.com/single on-ui-pack-EFCPEQ
-//
-// Why? PubSub is a well-established comminucation/architectural pattern. TurtleQueue
-//
-// the world is yours
-// think global act local
-// pubsub for developers
-// Smart messaging for smart developpers
-// Smart messaging for developpers
-// focus on delivering features with turtlequeue
-// landing pages:
-// Doing to messaging what Rails is to Ruby
-// Doing to messaging what express is to node
+import {Link} from "../components/Router";
 
-const BackgroundImage = styled.div`
-  ${props => props.className} {
-    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 1)),
-      url(${worldPaint}), url(${worldPaint2});
-    height: 100%;
-    width: 100%;
-    background-size: cover;
-    background-position: center;
-    background-attachment: fixed;
-    /* filter: grayscale(65%); */
-    background-repeat: no-repeat;
-    position: relative;
-    /* now elements are inside the background image
-  * doesn't feel right - todo see how to refactor this */
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-between;
-  }
+import HomeTurtle from "../assets/home-img.svg"
+import FeatureFirst from "../assets/features-1.svg"
+import FeatureSecond from "../assets/features-2.svg"
+import FeatureThird from "../assets/features-3.svg"
+import FeatureFourth from "../assets/features-4.svg"
+import FeatureFifth from "../assets/features-5.svg"
+import FeatureSixth from "../assets/features-6.svg"
 
-  figcaption {
-    position: absolute;
-    bottom: 0;
-    right: 0;
-    padding-left: 3px;
-    margin-left: auto;
-    margin-right: auto;
-    background-color: ${theme.darkShade};
-    font-size: 70%;
-  }
+import LoginGitHub from "../components/LoginGitHub"
 
-  a {
-    color: ${theme.light};
-  }
-`;
+import CodeView from "../components/CodeView"
 
-const Home = styled.div`
-  ${props => props.className} {
-    height: 100%;
-    width: 100%;
-    color: white;
-  }
+const MainPage = () => {
 
-  .valueProp {
-    margin-top: 5%;
-    font-size: 250%;
-    text-align: center;
-    line-height: 1.25em;
-    font-weight: 500;
-    ${media.tablet`font-size: 350%;
-line-height:1.7em; `}
-  }
+    return (
+        <Fragment>
+            <section className="home">
+                <div className="home__wrapper container">
+                    <div className="home-info">
+                        <div className="home-info__content">
+                            <h1 className="home-info__title">Cross platform messaging SDK</h1>
+                            <p className="home-info__text">Web, mobile, servers, micro-services, IoT... can now talk the
+                                same language.</p>
 
-  .catchy {
-    font-size: 150%;
-    text-align: center;
-    font-weight: 500;
-  }
+                            <p className="home-info__text">Serverless, with built-in persistence and advanced querying
+                                and filtering.</p>
 
-  .heroDescription {
-    max-width: 80%;
-    font-weight: 600;
-  }
+                            <LoginGitHub/>
+                        </div>
 
-  ul {
-    list-style: none;
-  }
+                        <div className="home-info__image">
+                            <img className="home-info__source" src={HomeTurtle} alt=""/>
+                        </div>
+                    </div>
 
-  ul li {
-    position: relative;
-    padding-bottom: 10px;
-  }
+                    <CodeView/>
+                </div>
+            </section>
 
-  ul.chevrons li:before {
-    content: "";
-    position: absolute;
-    border-right: 2px solid white;
-    border-bottom: 2px solid white;
-    width: 6px;
-    height: 6px;
-    top: calc(50% - 4px);
-    left: -20px;
-    transform: translateY(-50%) rotate(-45deg);
-  }
-`;
+            <section className="features">
+                <h2 className="g-title">Features</h2>
 
-const GhForm = styled.form`
-  ${props => props.className} {
-    width: auto;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: right;
-    font-size: 24px;
-    font-weight: 700;
-  }
-  .githubIcon {
-    width: 50px;
-    height: 50px;
-    background-repeat: no-repeat;
-    background-size: auto;
-    display: inline-block;
-    background-image: url(${GithubLogo});
-    background-size: contain;
-    display: flex;
-    align-items: stretch;
-  }
-  button:hover {
-    border-color: rgba(27, 31, 35, 0.5);
-  }
-  button {
-    background-color: #28a745;
-    width: 250px;
-    height: 100px;
-    display: flex;
-    align-items: stretch;
-    border-radius: 6px;
-    padding: 0.75em 1.25em;
-    color: #fff;
-    background-image: linear-gradient(-180deg, #34d058 0%, #28a745 90%);
-    border: 1px solid rgba(27, 31, 35, 0.2);
-    cursor: pointer;
-  }
-`;
+                <div className="features__wrapper container">
+                    <div className="features-item">
+                        <div className="features-item__icon">
+                            <img className="features-item__source" src={FeatureFirst} alt="Devops Friendly"/>
+                        </div>
 
-const Cards = styled.div`
-${props => props.className} {
-   justify-content: space-between;
-   flex-wrap: wrap;
-  }
-`
+                        <h5 className="features-item__title">Devops friendly</h5>
+                        <p className="features-item__text">Choose from hosted or any cloud - private or public without
+                            external dependencies. We run on kubernetes.</p>
+                    </div>
 
-const Card = styled.div`
-${props => props.className} {
-    width: 200px;
-    display: inline-block;
-    margin: 20px;
-  }
+                    <div className="features-item">
+                        <div className="features-item__icon">
+                            <img className="features-item__source" src={FeatureSecond} alt="Production Ready"/>
+                        </div>
 
-div {
- font-weight: 600;
+                        <h5 className="features-item__title">Production ready</h5>
+                        <p className="features-item__text">Distributed, with no single point of failure.
+                            Acknowledgements, automatic reconnection, authentication and fine-grained authorization.
+                            Built-in persistence and introspection via tracing and SQL analytics.</p>
+                    </div>
+
+                    <div className="features-item">
+                        <div className="features-item__icon">
+                            <img className="features-item__source" src={FeatureThird} alt="Developer Friendly"/>
+                        </div>
+
+                        <h5 className="features-item__title">Developer friendly</h5>
+                        <p className="features-item__text">What you send is what you get. Automatic channel creation.
+                            Publish-subscribe or response-request. You won't have to learn about exchanges, routes,
+                            dead-letter queues, rebalancing, sharding (unless you want to).</p>
+                    </div>
+
+                    <div className="features-item">
+                        <div className="features-item__icon">
+                            <img className="features-item__source" src={FeatureFourth} alt="Time Saver"/>
+                        </div>
+
+                        <h5 className="features-item__title">Time saver</h5>
+                        <p className="features-item__text">Choose from hosted or any cloud - private or public without
+                            external dependencies. We run on kubernetes.</p>
+                    </div>
+
+                    <div className="features-item">
+                        <div className="features-item__icon">
+                            <img className="features-item__source" src={FeatureFifth} alt="Powerful functions"/>
+                        </div>
+
+                        <h5 className="features-item__title">Powerful functions</h5>
+                        <p className="features-item__text">Delayed messages. Channels regex selection (not just
+                            wildcard). Built-in prioritization. Advanced filter like geolocalization and JsonPath.</p>
+                    </div>
+
+                    <div className="features-item">
+                        <div className="features-item__icon">
+                            <img className="features-item__source" src={FeatureSixth} alt="Dashboard"/>
+                        </div>
+
+                        <h5 className="features-item__title">Devops friendly</h5>
+                        <p className="features-item__text">What you send is what you get. Automatic channel creation.
+                            Publish-subscribe or response-request. You won't have to learn about exchanges, routes,
+                            dead-letter queues, rebalancing, sharding (unless you want to).</p>
+                    </div>
+                </div>
+            </section>
+
+            <section className="pricing" id="pricing">
+                <div className="pricing__wrapper container">
+                    <h2 className="g-title">Simple and Transparent Pricing</h2>
+                    <p className="pricing__subtitle">Choose your ideal plan</p>
+
+                    <div className="pricing__content">
+                        <div className="pricing-item">
+                            <h5 className="pricing-item__type">Personal</h5>
+                            <h2 className="pricing-item__price">Free</h2>
+                            <h6 className="pricing-item__time">forever</h6>
+                            <p className="pricing-item__data"><span
+                                className="pricing-item__data_bold">10K</span> messages/month</p>
+                            <p className="pricing-item__data"><span
+                                className="pricing-item__data_bold">500MB</span> data persistence</p>
+
+                            <form className="g-button" action="/security/oauth2/initiate-github" method="POST">
+                                <button className="g-button__text" type="submit">Use for free</button>
+                            </form>
+                        </div>
+
+                        <div className="pricing-item pricing-item_pro">
+                            <h5 className="pricing-item__type">Pro</h5>
+                            <h2 className="pricing-item__price">&#163;50</h2>
+                            <h6 className="pricing-item__time">Per month</h6>
+                            <p className="pricing-item__data"><span
+                                className="pricing-item__data_bold">1M</span> messages/month</p>
+                            <p className="pricing-item__data"><span className="pricing-item__data_bold">50GB</span> data
+                                persistence</p>
+
+                            <form className="g-button" action="/security/oauth2/initiate-github" method="POST">
+                                <button className="g-button__text g-button__text_fill" type="submit">Free while in
+                                    beta
+                                </button>
+                            </form>
+                        </div>
+
+                        <div className="pricing-item">
+                            <h5 className="pricing-item__type">Personal</h5>
+                            <h2 className="pricing-item__price">&#163;149</h2>
+                            <h6 className="pricing-item__time">Per month</h6>
+                            <p className="pricing-item__data"><span
+                                className="pricing-item__data_bold">10M</span> messages/month</p>
+                            <p className="pricing-item__data"><span
+                                className="pricing-item__data_bold">500GB</span> data persistence</p>
+
+                            <form className="g-button" action="/security/oauth2/initiate-github" method="POST">
+                                <button className="g-button__text" type="submit">Free while in beta</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section className="contact" id="contact">
+                <div className="contact__wrapper container">
+                    <h3 className="contact__question">Do you have any questions?</h3>
+                    <p className="contact__text">contact us via email</p>
+                    <a className="contact__link" href="mailto:turtle@turtlequeue.com">turtle@turtlequeue.com</a>
+                    <p className="contact__text">or send a message</p>
+
+                    <form className="contact-form">
+                        <label className="contact-form__label">
+                            <input className="contact-form__input" type="text" placeholder="Name"/>
+                            <span className="contact-form__span"></span>
+                        </label>
+
+                        <label className="contact-form__label">
+                            <input className="contact-form__input" type="mail" placeholder="Email"/>
+                            <span className="contact-form__span"></span>
+                        </label>
+
+                        <label className="contact-form__label">
+                            <textarea className="contact-form__textarea" placeholder="Text"></textarea>
+                            <span className="contact-form__span"></span>
+                        </label>
+                    </form>
+
+                    <div className="contact__block">
+                        <button className="contact__chat">Open chat</button>
+                        <button className="contact__submit">Submit</button>
+                    </div>
+                </div>
+            </section>
+        </Fragment>
+    );
 }
-`
 
-export default () => (
-  <Fragment>
-    <Home>
-      <BackgroundImage>
-        <h1 className="valueProp">Cross platform messaging</h1>
-        <h2 className="catchy">Messaging for the modern web</h2>
-        <p className="heroDescription"> TurtleQueue is Message Queue Broker for all: web, mobile, servers, micro-services, IoT... can now talk the same language. Serverless, with built-in persistence and advanced querying and filtering.</p>
-        <GhForm action="/security/oauth2/initiate-github" method="POST">
-          <button type="submit">
-            <i className="githubIcon" />
-            Log in with Github
-          </button>
-        </GhForm>
-
-        <CodeSnippet />
-
-        <Cards>
-          <Card>
-            {/* <img src={imgDevopsFriendly} alt="Devops friendly"/> */}
-            <div>Devops friendly</div>
-            <p>Choose from hosted or any cloud - private or public without external dependencies. We run on kubernetes.</p>
-          </Card>
-
-          <Card>
-            {/* <img src={imgProductionReady} alt="Production ready"/> */}
-            <div>Production ready</div>
-            <p>Distributed, with no single point of failure. Acknowledgements, automatic reconnection, authentication and fine-grained authorization. Built-in persistence and introspection via tracing and SQL analytics.</p>
-          </Card>
-
-          <Card>
-            {/* <img src={imgDeveloperFriendly} alt="Developer friendly"/> */}
-            <div>Developer friendly</div>
-            <p>What you send is what you get. Automatic channel creation. Publish-subscribe or response-request. You won't have to learn about exchanges, routes, dead-letter queues, rebalancing, sharding (unless you want to).</p>
-          </Card>
-
-          <br/>
-
-          <Card>
-            {/* <img src={imgTimeSaver} alt="Time saver"/> */}
-            <div>Time saver</div>
-            <p>Ready for production or rapid prototyping. Send your first messages in under a minute.</p>
-          </Card>
-
-          <Card>
-            {/* <img src={imgPowerfulFunctions} alt="Powerful functions"/> */}
-            <div>Powerful functions</div>
-            <p>Delayed messages. Channels regex selection (not just wildcard). Built-in prioritization. Advanced filter like geolocalization and JsonPath.</p>
-          </Card>
-
-
-          <Card>
-            {/* <img src={imgDashboard} alt="Dashboard"/> */}
-            <div>Dashboard</div>
-            <p>Dashboard for monitoring, statistics, and one-off operations.</p>
-          </Card>
-</Cards>
-        <figcaption>
-          <a href="https://goo.gl/a1njLp">Image CC BY 2.0 </a>
-        </figcaption>
-      </BackgroundImage>
-    </Home>
-  </Fragment>
-);
+export default MainPage;
