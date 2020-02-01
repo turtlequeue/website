@@ -1,4 +1,4 @@
-import { Fragment } from "react";
+import React, { Fragment } from "react";
 import "../styles/main.scss";
 import { Link } from "../components/Router";
 import HomeTurtle from "../assets/home-img.svg";
