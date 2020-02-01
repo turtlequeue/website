@@ -1,4 +1,4 @@
-import React, {useState, useRef, useEffect, cloneElement} from 'react'
+import {useState, useRef, useEffect, cloneElement} from 'react'
 import {Tabs, useTabState, Panel} from '@bumaga/tabs'
 import {motion, AnimatePresence} from 'framer-motion'
 
@@ -122,9 +122,9 @@ export default () => {
 
     const JsPublishMob = `turtlequeue.publish(
       {
-      channel:'#news', payload: 
+      channel:'#news', payload:
       { msg:'hello', d: new Date()}}
-      ).then((data) => 
+      ).then((data) =>
       console.log('published to:',
       data))`;
 
@@ -140,7 +140,7 @@ export default () => {
       data metadata] (println "publish
        " data)))`;
 
-    const CljSubscribeMob = `(turtlequeue/subscribe driver 
+    const CljSubscribeMob = `(turtlequeue/subscribe driver
       {:channel "#news"}
       (fn [err data metadata]
       (println "data received" data)))

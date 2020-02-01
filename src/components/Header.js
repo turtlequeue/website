@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import { useState } from 'react';
 
 import { Link } from "./Router";
 
@@ -54,7 +54,7 @@ const Header = () => {
 
                     <LoginGitHub />
                 </div>
-                
+
             </nav>
         </header>
     );
