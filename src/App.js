@@ -1,16 +1,16 @@
 ﻿//-*- coding: utf-8-with-signature-unix -*-
 
 import React from "react";
-import {Root, Routes, addPrefetchExcludes} from "react-static";
+import { Root, Routes, addPrefetchExcludes } from "react-static";
 //
-import {Link, Router} from "components/Router";
+import { Link, Router } from "components/Router";
 // import Dynamic from "containers/Dynamic";
 
-import styled, {createGlobalStyle} from "styled-components";
+import styled, { createGlobalStyle } from "styled-components";
 
-import {theme} from "./lib/color.js";
-import {AnalyticsJsSnippet} from "./lib/analytics.js";
-import {CrispSnippet} from "./lib/crisp.js";
+import { theme } from "./lib/color.js";
+import { AnalyticsJsSnippet } from "./lib/analytics.js";
+import { CrispSnippet } from "./lib/crisp.js";
 
 import "normalize.css";
 
@@ -26,10 +26,10 @@ addPrefetchExcludes(["dynamic"]);
 // https://css-tricks.com/snippets/css/system-font-stack
 //
 
-import Header from "./components/Header"
-import Footer from "./components/Footer"
+import Header from "./components/Header";
+import Footer from "./components/Footer";
 
-import "./styles/main.scss"
+import "./styles/main.scss";
 
 const GlobalStyle = createGlobalStyle`
 * {
@@ -69,38 +69,38 @@ const Main = styled.main`
 `;
 
 function App() {
-    return (
-        <Root>
-            <GlobalStyle/>
+  return (
+    <Root>
+      <GlobalStyle />
 
-            <Header/>
+      <Header />
 
-            <Main>
-                <React.Suspense fallback={<em>Loading...</em>}>
-                    <Router>
-                        {/* <Dynamic path="dynamic" /> */}
-                        <Routes path="*"/>
-                    </Router>
-                </React.Suspense>
-            </Main>
+      <Main>
+        <React.Suspense fallback={<em>Loading...</em>}>
+          <Router>
+            {/* <Dynamic path="dynamic" /> */}
+            <Routes path="*" />
+          </Router>
+        </React.Suspense>
+      </Main>
 
-            <Footer/>
-            <script
-                type="text/javascript"
-                dangerouslySetInnerHTML={{__html: AnalyticsJsSnippet}}
-            />
-            <script
-                type="text/javascript"
-                dangerouslySetInnerHTML={{__html: CrispSnippet}}
-            />
-        </Root>
-    );
+      <Footer />
+      <script
+        type="text/javascript"
+        dangerouslySetInnerHTML={{ __html: AnalyticsJsSnippet }}
+      />
+      <script
+        type="text/javascript"
+        dangerouslySetInnerHTML={{ __html: CrispSnippet }}
+      />
+    </Root>
+  );
 }
 
 if (typeof document !== "undefined") {
-    const hotjar = require("react-hotjar").hotjar;
-    const hotJarConfig = {hjid: 1431493, hjsv: 6};
-    hotjar.initialize(hotJarConfig.hjid, hotJarConfig.hjsv);
+  const hotjar = require("react-hotjar").hotjar;
+  const hotJarConfig = { hjid: 1431493, hjsv: 6 };
+  hotjar.initialize(hotJarConfig.hjid, hotJarConfig.hjsv);
 }
 
 export default App;
