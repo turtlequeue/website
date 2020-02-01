@@ -1,11 +1,7 @@
 import { useState } from "react";
-
 import { Link } from "./Router";
-
 import LoginGitHub from "./LoginGitHub";
-
 import HeaderLogo from "../assets/header-logo.svg";
-
 import useMediaQuery from "../lib/media.js";
 
 const Header = () => {

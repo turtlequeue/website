@@ -1,9 +1,6 @@
 import { Fragment } from "react";
-
 import "../styles/main.scss";
-
 import { Link } from "../components/Router";
-
 import HomeTurtle from "../assets/home-img.svg";
 import FeatureFirst from "../assets/features-1.svg";
 import FeatureSecond from "../assets/features-2.svg";
