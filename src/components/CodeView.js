@@ -1,4 +1,4 @@
-import { useState, useRef, useEffect, cloneElement } from "react";
+import React, { useState, useRef, useEffect, cloneElement } from "react";
 import { Tabs, useTabState, Panel } from "@bumaga/tabs";
 import { motion, AnimatePresence } from "framer-motion";
 
