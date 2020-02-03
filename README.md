@@ -16,3 +16,4 @@ https://github.com/nozzle/react-static/tree/master/packages/react-static-plugin-
 Before merging PR
 
     prettier --write 'src/**/*.js'
+    yarn test
