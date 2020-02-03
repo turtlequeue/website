@@ -10,7 +10,7 @@
     "analyze": "react-static build --analyze",
     "serve": "serve dist -p 3000",
     "prettier": "prettier --write 'src/**/*.js'",
-    "test": "yarn build && grep dist/index.html \"TurtleQueue\""
+    "test": "yarn build && grep \"TurtleQueue\" dist/index.html"
   },
   "dependencies": {
     "@bumaga/tabs": "^0.2.0",
