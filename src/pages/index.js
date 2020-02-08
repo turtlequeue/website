@@ -13,9 +13,19 @@ import LoginGitHub from "../components/LoginGitHub";
 
 import CodeView from "../components/CodeView";
 
+
 class MainPage extends React.Component {
+  constructor(props) {
+    super(props);
+    this.submitForm = this.submitForm.bind(this);
+    this.state = {
+      status: ""
+    };
+  }
 
   render() {
+    const { status } = this.state;
+
     return (
     <Fragment>
       <section className="home">
@@ -237,7 +247,12 @@ class MainPage extends React.Component {
           </div>
         </div>
       </section>
-
+      {status === "SUCCESS" ?
+       <div>
+         <p className="contact__confirm">Your feedback has been submitted.</p>
+         <p className="contact__thanks">Thank you!</p>
+       </div>
+       :
       <section className="contact" id="contact">
         <div className="contact__wrapper container">
           <h3 className="contact__question">Do you have any questions?</h3>
@@ -247,39 +262,57 @@ class MainPage extends React.Component {
           </a>
           <p className="contact__text">or send a message</p>
 
-          <form className="contact-form" action="mailto:turtle@turtlequeue.com" method="POST">
-            <label className="contact-form__label">
-              <input
-                className="contact-form__input"
-                type="text"
-                placeholder="Name"
-              />
-              <span className="contact-form__span" />
-            </label>
+           <form
+             className="contact-form"
+             onSubmit={this.submitForm}
+             action="https://formspree.io/xrgqawqg"
+             method="POST">
 
-            <label className="contact-form__label">
-              <input
-                className="contact-form__input"
-                type="mail"
-                placeholder="Email"
-              />
-              <span className="contact-form__span" />
-            </label>
+             <label className="contact-form__label">
+               <input
+                 className="contact-form__input"
+                 type="text"
+                 placeholder="Name" />
+               <span className="contact-form__span" />
+             </label>
 
-            <label className="contact-form__label">
-              <textarea className="contact-form__textarea" placeholder="Text" />
-              <span className="contact-form__span" />
-            </label>
-          </form>
+             <label className="contact-form__label">
+               <input type="email" name="_replyto" className="contact-form__input" placeholder="Email" />
+               <span className="contact-form__span" />
+             </label>
 
+             <label className="contact-form__label">
+               <textarea className="contact-form__textarea" type="text" name="message" placeholder="Your message"/>
+             </label>
+             <button className="contact__submit">Submit</button>
+           </form>
+          {status === "ERROR" && <p className="contact__error">Ooops! There was an error. Please check that all the fields are filled and the email is valid.</p>}
+          {window.$crisp &&
           <div className="contact__block">
             <button className="contact__chat" onClick={() => window.$crisp.push(['do', 'chat:open'])}>Open chat</button>
-            <button className="contact__submit">Submit</button>
-          </div>
+          </div>}
         </div>
-      </section>
+      </section>}
     </Fragment>
     );
+  }
+  submitForm (ev) {
+    ev.preventDefault();
+    const form = ev.target;
+    const data = new FormData(form);
+    const xhr = new XMLHttpRequest();
+    xhr.open(form.method, form.action);
+    xhr.setRequestHeader("Accept", "application/json");
+    xhr.onreadystatechange = () => {
+      if (xhr.readyState !== XMLHttpRequest.DONE) return;
+      if (xhr.status === 200) {
+        form.reset();
+        this.setState({ status: "SUCCESS" });
+      } else {
+        this.setState({ status: "ERROR" });
+      }
+    };
+    xhr.send(data);
   }
 }
 

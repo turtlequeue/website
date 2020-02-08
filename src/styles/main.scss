@@ -302,6 +302,43 @@
     padding-bottom: 64px;
     background-color: $color-light;
 
+    &__confirm {
+      margin: 0;
+      margin-bottom: 8px;
+      font-family: $font;
+      font-weight: bold;
+      font-size: 26px;
+      line-height: 32px;
+      text-align: center;
+      color: $color-success;
+      padding: 25px;
+    }
+
+    &__thanks {
+      margin: 0;
+      margin-bottom: 8px;
+      font-family: $font;
+      font-weight: bold;
+      font-size: 26px;
+      line-height: 32px;
+      text-align: center;
+      color: $color-primary;
+      padding: 25px;
+    }
+
+    &__error {
+      margin: 0;
+      margin-bottom: 8px;
+      font-family: $font;
+      font-weight: bold;
+      font-size: 26px;
+      line-height: 32px;
+      text-align: center;
+      color: $color-warning;
+      padding: 25px;
+    }
+
+
     &__question {
         margin: 0;
         margin-bottom: 8px;
