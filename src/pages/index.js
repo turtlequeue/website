@@ -8,13 +8,15 @@ import FeatureThird from "../assets/features-3.svg";
 import FeatureFourth from "../assets/features-4.svg";
 import FeatureFifth from "../assets/features-5.svg";
 import FeatureSixth from "../assets/features-6.svg";
-
+// import { CrispOpen } from "./lib/crisp.js";
 import LoginGitHub from "../components/LoginGitHub";
 
 import CodeView from "../components/CodeView";
 
-const MainPage = () => {
-  return (
+class MainPage extends React.Component {
+
+  render() {
+    return (
     <Fragment>
       <section className="home">
         <div className="home__wrapper container">
@@ -245,7 +247,7 @@ const MainPage = () => {
           </a>
           <p className="contact__text">or send a message</p>
 
-          <form className="contact-form">
+          <form className="contact-form" action="mailto:turtle@turtlequeue.com" method="POST">
             <label className="contact-form__label">
               <input
                 className="contact-form__input"
@@ -271,13 +273,14 @@ const MainPage = () => {
           </form>
 
           <div className="contact__block">
-            <button className="contact__chat">Open chat</button>
+            <button className="contact__chat" onClick={() => window.$crisp.push(['do', 'chat:open'])}>Open chat</button>
             <button className="contact__submit">Submit</button>
           </div>
         </div>
       </section>
     </Fragment>
-  );
-};
+    );
+  }
+}
 
 export default MainPage;

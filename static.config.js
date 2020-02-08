@@ -49,7 +49,9 @@ export default {
     require.resolve('react-static-plugin-reach-router'),
     require.resolve('react-static-plugin-sitemap')
   ],
-  webpack: config => {
+  webpack: (config, { stage }) => {
+    // I do NOT see this log
+    console.log('WEBPACK CALLED', stage);
 
     const plugins = [
       imageminGifsicle({
@@ -82,6 +84,12 @@ export default {
         plugins
       }
     }));
+
+    // https://webpack.js.org/configuration/externals/
+    console.log('EXTERNALS', externals);
+
+    config.externals.crisp={root: '$crisp'};
+
     return config
   }
 }
