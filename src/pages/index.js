@@ -70,8 +70,8 @@ class MainPage extends React.Component {
 
             <h5 className="features-item__title">Devops friendly</h5>
             <p className="features-item__text">
-              Choose from hosted or any cloud - private or public without
-              external dependencies. We run on kubernetes.
+              <p>Choose from hosted or any cloud - private or public without external dependencies.</p>
+              <p>We run on kubernetes.</p>
             </p>
           </div>
 
@@ -86,10 +86,9 @@ class MainPage extends React.Component {
 
             <h5 className="features-item__title">Production ready</h5>
             <p className="features-item__text">
-              Distributed, with no single point of failure. Acknowledgements,
-              automatic reconnection, authentication and fine-grained
-              authorization. Built-in persistence and introspection via tracing
-              and SQL analytics.
+              <p>Distributed, with no single point of failure. </p>
+              <p>Acknowledgements, automatic reconnection, authentication and fine-grained authorization.</p>
+              <p>Built-in persistence and introspection via tracing and SQL analytics.</p>
             </p>
           </div>
 
@@ -104,10 +103,9 @@ class MainPage extends React.Component {
 
             <h5 className="features-item__title">Developer friendly</h5>
             <p className="features-item__text">
-              What you send is what you get. Automatic channel creation.
-              Publish-subscribe or response-request. You won't have to learn
-              about exchanges, routes, dead-letter queues, rebalancing, sharding
-              (unless you want to).
+              <p>What you send is what you get. Automatic channel creation.</p>
+              <p>Publish-subscribe or response-request.</p>
+              <p>You won't have to learn about exchanges, routes, dead-letter queues, rebalancing, sharding.</p>
             </p>
           </div>
 
@@ -122,8 +120,7 @@ class MainPage extends React.Component {
 
             <h5 className="features-item__title">Time saver</h5>
             <p className="features-item__text">
-              Choose from hosted or any cloud - private or public without
-              external dependencies. We run on kubernetes.
+              <p>Launch in production in the time it takes to prototype.</p>
             </p>
           </div>
 
@@ -138,9 +135,9 @@ class MainPage extends React.Component {
 
             <h5 className="features-item__title">Powerful functions</h5>
             <p className="features-item__text">
-              Delayed messages. Channels regex selection (not just wildcard).
-              Built-in prioritization. Advanced filter like geolocalization and
-              JsonPath.
+              <p>Delayed messages. Channels full regex support (not just wildcard).</p>
+              <p>Built-in prioritization.</p>
+              <p>Advanced filter like geolocalization and JsonPath.</p>
             </p>
           </div>
 
@@ -153,12 +150,10 @@ class MainPage extends React.Component {
               />
             </div>
 
-            <h5 className="features-item__title">Devops friendly</h5>
+            <h5 className="features-item__title">Dashboard</h5>
             <p className="features-item__text">
-              What you send is what you get. Automatic channel creation.
-              Publish-subscribe or response-request. You won't have to learn
-              about exchanges, routes, dead-letter queues, rebalancing, sharding
-              (unless you want to).
+              <p>See your connections, messages transit in real-time. Manage authentication tokens.</p>
+              <p>Perform one-off operations without writing code.</p>
             </p>
           </div>
         </div>
