@@ -255,7 +255,7 @@ class MainPage extends React.Component {
           <a className="contact__link" href="mailto:turtle@turtlequeue.com">
             turtle@turtlequeue.com
           </a>
-          <p className="contact__text">or send a message</p>
+          <p className="contact__text">or send us a message</p>
 
            <form
              className="contact-form"
@@ -278,8 +278,8 @@ class MainPage extends React.Component {
 
              <label className="contact-form__label">
                <textarea className="contact-form__textarea" type="text" name="message" placeholder="Your message"/>
+               <span className="contact-form__span" />
              </label>
-             <span className="contact-form__span" />
              <button className="contact__submit">Submit</button>
            </form>
           {status === "ERROR" && <p className="contact__error">Ooops! There was an error. Please check that all the fields are filled and the email is valid.</p>}
