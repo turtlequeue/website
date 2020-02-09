@@ -13,7 +13,7 @@ const Footer = () => {
             YC SS 2019
           </a>
           <p className="footer-info__text">
-            Made by turtles for turtles with🍷in London (2019)
+            Made by turtles for turtles with🍷in London
           </p>
         </div>
 

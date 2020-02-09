@@ -68,6 +68,9 @@ const Main = styled.main`
   }
 `;
 
+// why isn't this working??
+{/* naughty! https://github.com/react-static/react-static/blob/18191c80a8d31debda5106edf468e7daa4ac517e/packages/react-static/src/bootstrapApp.js#L9 */}
+
 function App() {
   return (
     <Root>
