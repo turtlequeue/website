@@ -36,7 +36,7 @@ const Header = () => {
         >
           <ul className="header-nav__list">
             <li className="header-nav__item" onClick={() => handleActive()}>
-              <Link className="header-nav__link" to="/doc">
+              <Link className="header-nav__link" to="/doc/latest/overview.html">
                 Documentation
               </Link>
             </li>
