@@ -284,6 +284,7 @@ class MainPage extends React.Component {
              <label className="contact-form__label">
                <textarea className="contact-form__textarea" type="text" name="message" placeholder="Your message"/>
              </label>
+             <span className="contact-form__span" />
              <button className="contact__submit">Submit</button>
            </form>
           {status === "ERROR" && <p className="contact__error">Ooops! There was an error. Please check that all the fields are filled and the email is valid.</p>}
