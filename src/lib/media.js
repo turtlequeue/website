@@ -8,7 +8,18 @@ const useMediaQuery = query => {
       const updateMatch = () => setMatch(window.matchMedia(query).matches);
 
       updateMatch();
-      window.matchMedia(query).addEventListener("change", updateMatch);
+      //https://stackoverflow.com/a/60000747
+      try {
+        // Chrome & Firefox
+        window.matchMedia(query).addEventListener("change", updateMatch);
+      } catch (e1) {
+        try {
+          // Safari
+          window.matchMedia(query).addListener("change", updateMatch);
+        } catch (e2) {
+          console.error(e2);
+        }
+      }
       return () => {
         window.matchMedia(query).removeEventListener("change", updateMatch);
       };
