@@ -15,7 +15,7 @@ const useMediaQuery = query => {
       } catch (e1) {
         try {
           // Safari
-          window.matchMedia(query).addListener("change", updateMatch);
+          window.matchMedia(query).addListener(updateMatch);
         } catch (e2) {
           console.error(e2);
         }
