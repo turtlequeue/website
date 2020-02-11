@@ -27,7 +27,7 @@ const PanelList = ({ state, children }) => {
   const panelRef = useRef();
   const [height, set] = useState(0);
   const [activeIndex] = state;
-  const small = useMedia("(max-width: 1040px)");
+  const small = useMedia("screen and (max-width: 1040px)");
 
   useEffect(
     () => {
@@ -64,7 +64,7 @@ const PanelListMob = ({ state, children }) => {
   const panelRef = useRef();
   const [height, set] = useState(0);
   const [activeIndex] = state;
-  const small = useMedia("(max-width: 1040px)");
+  const small = useMedia("screen and (max-width: 1040px)");
 
   useEffect(
     () => {
@@ -120,7 +120,7 @@ const useMedia = query => {
 
 export default () => {
   const state = useState(0);
-  const small = useMedia("(max-width: 1040px)");
+  const small = useMedia("screen and (max-width: 1040px)");
 
   const JsPublish = `turtlequeue.publish({channel:'#news', payload: {msg:\'hello\', d: new Date()}})
       .then((data) => console.log(\'published to:\', data))`;

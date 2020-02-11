@@ -74,6 +74,7 @@ const Main = styled.main`
 function App() {
   return (
     <Root>
+      {/* <script src="https://polyfill.io/v3/polyfill.min.js?features=matchMedia%2Cdefault"></script> */}
       <GlobalStyle />
 
       <Header />
@@ -88,6 +89,7 @@ function App() {
       </Main>
 
       <Footer />
+
       <script
         type="text/javascript"
         dangerouslySetInnerHTML={{ __html: AnalyticsJsSnippet }}
