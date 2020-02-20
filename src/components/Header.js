@@ -35,10 +35,14 @@ const Header = () => {
           className={`header-nav__content${active && mobile ? " active" : ""}`}
         >
           <ul className="header-nav__list">
+
             <li className="header-nav__item" onClick={() => handleActive()}>
-              <Link className="header-nav__link" to="/doc/latest/overview.html">
+              <a
+                className="header-nav__link"
+                href="/doc/latest/overview.html"
+              >
                 Documentation
-              </Link>
+              </a>
             </li>
 
             <li className="header-nav__item" onClick={() => handleActive()}>
