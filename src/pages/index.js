@@ -5,7 +5,7 @@ import Link from '@docusaurus/Link';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import useBaseUrl from '@docusaurus/useBaseUrl';
 import styles from './styles.module.css';
-import { LoginGitHub } from '../components/LoginGitHub.js';
+import { LoginGithub } from '../components/LoginGithub.js';
 import { AnalyticsJsSnippet } from '../lib/analytics.js';
 import { CrispSnippet } from '../lib/crisp.js';
 
@@ -111,7 +111,7 @@ function Home() {
                 to={useBaseUrl('docs/')}>
                 Get Started
               </Link>
-              <LoginGitHub />
+              <LoginGithub />
             </div>
           </div>
 
