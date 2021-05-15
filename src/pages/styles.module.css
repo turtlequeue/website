@@ -1,0 +1,94 @@
+/**
+ * CSS files with the .module.css suffix will be treated as CSS modules
+ * and scoped locally.
+ */
+
+/* Overrride infima stuff here */
+
+.hero__title {
+  font-size: 4em;
+  /* white-space: nowrap; */
+}
+@media screen and (max-width: 966px) {
+  .hero__title {
+    font-size: 2em;
+    /* white-space: nowrap; */
+  }
+}
+
+.heroContainer {
+  display: flex;
+  flex-direction: row;
+  height: calc(100vh - 11.75rem);
+  align-items: center;
+  justify-content: center;
+}
+
+.heroCatchtext {
+  width: 50%;
+  height: 90%;
+}
+
+@media screen and (max-width: 966px) {
+  .heroCatchtext {
+    width: 100%;
+  }
+}
+
+.heroSplashImg {
+  height: 90%;
+}
+
+.heroBanner {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  padding: 4rem 0;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+html[data-theme='light'] .heroBanner {
+  color: #34495e;
+}
+
+
+.getStarted {
+  background-color: #48d2a0;
+}
+html[data-theme='dark'] .getStarted {
+  /* background-color: #34495e; */
+  background-color: var(--ifm-color-primary-darkest);
+}
+
+.heroImage {
+}
+
+@media screen and (max-width: 966px) {
+  .heroImage {
+    display: none;
+  }
+}
+
+.buttons {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+
+/* After landing screen */
+
+.features {
+  display: flex;
+  align-items: center;
+  padding: 2rem 0;
+  width: 100%;
+}
+
+.featureImage {
+  height: 200px;
+  width: 200px;
+}
