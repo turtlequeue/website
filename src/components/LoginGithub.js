@@ -1,7 +1,7 @@
-import React from "react";
+import React from 'react';
 import styles from '../pages/styles.module.css';
 
-const LoginGithub = () => {
+export const LoginGithub = () => {
   return (
     <form
       className="g-git"
@@ -21,5 +21,3 @@ const LoginGithub = () => {
     </form>
   );
 };
-
-export default LoginGithub;
