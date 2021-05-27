@@ -87,7 +87,7 @@ module.exports = {
     announcementBar: {
       id: 'support_us',
       content:
-      'We are preparing for a launch during S1 of 2021. Stay tuned!',
+      'Public Beta. We are preparing for GA S2 of 2021.',
       backgroundColor: '#fafbfc', // Defaults to `#fff`.
       textColor: '#091E42', // Defaults to `#000`.
       isCloseable: true, // Defaults to `true`.
