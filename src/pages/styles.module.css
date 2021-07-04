@@ -79,6 +79,13 @@ html[data-theme='dark'] .getStarted {
 }
 
 
+@media screen and (max-width: 768px) {
+  .buttons {
+    flex-direction: column;
+  }
+}
+
+
 /* After landing screen */
 
 .features {
